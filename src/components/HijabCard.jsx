@@ -5,11 +5,11 @@ function HijabCard({ name, image, price }) {
   const [review, setReview] = useState("");
 
   const handleSubmit = async () => {
-    const userId = localStorage.getItem("userId"); // adjust if needed
+    const userId = localStorage.getItem("userId"); 
     if (!userId) return alert("You must be logged in to submit a review.");
 
     try {
-      const res = await fetch("http://localhost:5000/api/reviews/add", {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/reviews/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
