@@ -9,7 +9,7 @@ function HijabCard({ name, image, price }) {
     if (!userId) return alert("You must be logged in to submit a review.");
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/reviews/add`, {
+      const res = await fetch(`https://hackathon-backend-production-7fee.up.railway.app/api/reviews/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
